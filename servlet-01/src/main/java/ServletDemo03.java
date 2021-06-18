@@ -1,4 +1,3 @@
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,20 +6,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author clam
- * @version 1.8
- * @date 2021/6/17 23:24
+ * @author by clam on 2021/6/18.
  */
-public class HelloServlet extends HttpServlet {
+public class ServletDemo03 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletContext context = this.getServletContext();
-        String username = "愚者";
-        context.setAttribute("username", username);
+        String url = this.getServletContext().getInitParameter("url");
+        resp.getWriter().println(url);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        doGet(req, resp);
     }
 }
