@@ -56,8 +56,4 @@
         <servlet-name>default</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>404</servlet-name>
-        <url-pattern>/*</url-pattern>
-    </servlet-mapping>
 </web-app>
